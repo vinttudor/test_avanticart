@@ -1,0 +1,24 @@
+Codul de mai jos este folosit pentru a genera un formular.
+Trebuie sa implementezi clasele Form, InputField, Textarea, Checkbox (si
+altele daca crezi ca ai nevoie) astfel incat, atunci cand se apeleaza 
+$form->display() sa fie generat codul HTML care va contine cele 4 campuri 
+adaugate anterior cu metoda addField();
+
+Formularul nu trebuie procesat, nu trebuie salvate datele. Ne intereseaza
+doar modul in care generezi codul HTML pentru afisarea formularului.
+
+Implementarea trebuie facuta folosind PHP "pur", fara a folosi un framework.
+Vrem sa vedem ca stapanesti partea de OOP, nu un framework anume.
+
+<?php
+$action = '/doStuff';
+$method = 'POST';
+$form = new Form($action, $method);
+ 
+ 
+$form->addField(new InputField('nume'));
+$form->addField(new InputField('prenume'));
+$form->addField(new Textarea('adresa'));
+$form->addField(new Checkbox('termeni_si_conditii'));
+ 
+$form->display();
